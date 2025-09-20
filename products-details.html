@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shopping page</title>
+        <meta charset="UFT-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <link rel="stylesheet" href="styles.css"/>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+    </head>
+    <body>
+        <section class="header-2"> 
+           
+            <nav>
+                <a href="index.html"><img src="images/logo1.svg" alt="" ></a>
+
+                <div class="nav-link" id="navLink">
+                     <i class="fa fa-window-close" onclick="hideMenu()"></i>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="product.html">Shop</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">contact</a></li>
+                        
+                  
+                    </ul>
+                </div>
+                <!--------------cartIcon--------------->
+                <div class="cart-icon" id="cartIcon">
+                      <a href="cart.html">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                    <span id="cartCount">0</span> </a>
+                </div>
+                
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+                
+            </nav>
+            
+             
+        </section>
+
+
+        <div class="small-container single-product" >
+            <div class="row" >
+                <div class="col-2" id="product-details-container">
+            
+                   
+           <!--- <img src="images/st1.jpg "width="100%" id="MainImg" alt="">-->
+                    <div class="small-img-row" id="thumbnails">
+                    <div class="small-col-img">
+                  !<!-- <img src="images/st1.jpg" width="100%"  alt="">
+                        <img src="images/st2.jpg" width="100%"  alt="">
+                        <img src="images/st3.jpg" width="100%"  alt="">
+                        <img src="images/st4.jpg" width="100%"  alt="">-->
+        
+                     </div>
+                    </div>
+                
+                
+                </div>
+                <div class="col-2" id="product-info">
+                    <p id="product-category"></p>
+                    <h1 id="product-name">Foot Wear</h1>
+                    <h4 id="product-price">Foot Socks</h4>
+                    <select id="product-sizes">
+                    <option>Select Size</option>
+                   <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    </select>
+                    <input type="number" id="product-quantity" value="1" min="1">
+                    <button class="button" id="add-to-cart-btn">Add to cart</button>
+                </div>
+            </div>
+          
+           
+
+
+         
+        </div>
+      
+      
+     <div class="small-container">
+        <div class="title">
+            <h2>Related Products</h2>
+      
+        </div>
+
+       
+
+       
+    
+    <!-- Related products grid will be rendered dynamically by JS -->
+    
+      <div class="row">
+        <div class="col-4">
+            <img src="images/hud1.jpg" alt="">
+            <h4>Classic Hoodies</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$8.00</p>
+             <button onclick="addToCart('Classic Hoodies')">Add To cart</button>
+        </div>
+
+        <div class="col-4">
+            <img src="images/T2.jpg">
+            <h4>Goku T-shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Goku T-shirt')">Add To cart</button>
+        </div>
+
+
+        <div class="col-4">
+            <img src="images/x4.jpg">
+            <h4>Levi accesories</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+              <button onclick="addToCart('Levi accesories')">Add To cart</button>
+        </div>  
+        
+        <div class="col-4">
+            <img src="images/g4.jpeg">
+            <h4>Head socks</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Head socks')">Add To cart</button>
+        </div>
+      
+       </div>
+      
+    
+
+    
+   
+
+     </div>
+
+        </div>
+   
+      
+    
+
+    
+      
+       
+        <!-----------------------footer--------------------->
+     <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                  <img src="images/logo1.svg">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                     nobis dolorem et temporibus, ipsam dolor.</p>
+                </div>
+
+                 <div class="footer-col-2">
+                    <h3>Usefull Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Posts</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+
+                    </ul>
+                   
+                  </div>
+                  
+                  <div class="footer-col-3">
+                    <h3>Follow Us on </h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/an1magnet?utm_source=qr&igsh=YWFrYTh4bDlmb2Mz">instagram</a> </li>
+                        <li> X-twitter </li>
+                        <li>Facebook</li>
+                        <li>Whatsapp</li>
+
+                    </ul>
+                  </div>
+
+                  <div class="footer-col-4">
+                    <h3>Payment Mode</h3>
+                    <ul>
+                        <li>Credit Cards </li>
+                        <li> Digital wallet </li>
+                        <li>Cryptocurrency</li>
+                        <li>Paypal</li>
+
+                    </ul>
+                  </div>
+        </div>
+
+                 <hr>
+            <p class="copyright">copyright2025 - Animagnetweb test</p>
+     </div>
+     
+</div>
+
+     
+      
+    </body>
+    <!---------------------------------JavaScript for toggle bar---------------->
+ <script>
+        var navLink = document.getElementById("navLink");
+        function showMenu(){
+            navLink.style.right ="0";
+        }
+        function hideMenu(){
+            navLink.style.right ="-200px";
+        }
+
+    </script>
+
+
+<!---------------------------------JavaScript for chatbox---------------->
+<script>
+
+             function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+<!-- Add cart functionality -->
+<script>
+    // Simple cart count
+    let cartCount = 0;
+    function addToCart(productName) {
+        cartCount++;
+        document.getElementById('cartCount').textContent = cartCount;
+        // Optionally, show a message
+        // alert(productName + " added to cart!");
+    }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var productData = sessionStorage.getItem('selectedProduct');
+    var detailsContainer = document.getElementById('product-details-container');
+    if (productData && detailsContainer) {
+        var product = JSON.parse(productData);
+        var selectedMsg = document.createElement('div');
+        selectedMsg.textContent = 'Product selected: ' + (product.name || '');
+        selectedMsg.style.background = '#e0ffe0';
+        selectedMsg.style.color = '#1a7f37';
+        selectedMsg.style.padding = '8px 16px';
+        selectedMsg.style.marginBottom = '12px';
+        selectedMsg.style.borderRadius = '6px';
+        selectedMsg.style.fontWeight = 'bold';
+        detailsContainer.prepend(selectedMsg);
+    }
+});
+</script>
+  
+
+   
+   <script src="products.js"></script>
+     <script src="script.js"></script>
+</html>

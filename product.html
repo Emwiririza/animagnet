@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shopping page</title>
+        <meta charset="UFT-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <link rel="stylesheet" href="styles.css"/>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+    </head>
+    <body>
+        <section class="header-2"> 
+           
+            <nav>
+                <a href="index.html"><img src="images/logo1.svg" alt="" ></a>
+
+                <div class="nav-link" id="navLink">
+                     <i class="fa fa-window-close" onclick="hideMenu()"></i>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="product.html">Shop</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                        
+                  
+                    </ul>
+                </div>
+                <!--------------cartIcon--------------->
+                <div class="cart-icon" id="cartIcon">
+                 <a href="cart.html">   <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg> 
+                    <span id="cartCount">0</span> </a>
+                </div>
+                
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+                
+            </nav>
+            
+             
+        </section>
+
+       
+      
+     <div class="small-container">
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <select>
+                <option>Default sorting</option>
+                <option>Sort by Price</option>
+                <option>Sort by Rating</option>
+                <option>Sort by Sale</option>
+                <option>Sort by Popularity</option>
+            </select>
+      
+        </div>
+           <!-- Product grid for dynamic product selection -->
+       
+      
+
+    <div class="row">
+        <div class="col-4">
+            <img src="images/hud1.jpg">
+            <h4>Classic Hoodies</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$8.00</p>
+             <button onclick="addToCart('Classic Hoodies')">Add To cart</button>
+        </div>
+
+        <div class="col-4">
+            <img src="images/T2.jpg">
+            <h4>Goku T-shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Goku T-shirt')">Add To cart</button>
+        </div>
+
+
+        <div class="col-4">
+            <img src="images/x4.jpg">
+            <h4>Levi accesories</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+              <button onclick="addToCart('Levi accesories')">Add To cart</button>
+        </div>  
+        
+        <div class="col-4">
+            <img src="images/g4.jpeg">
+            <h4>Head socks</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Head socks')">Add To cart</button>
+        </div>
+      
+       </div>
+
+    
+    <div class="row">
+        <div class="col-4">
+            <img src="images/st1.jpg" alt="">
+            <h4>Foot Socks</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Foot Socks')">Add To cart</button>
+        </div>
+
+        <div class="col-4">
+            <img src="images/capblak2.jpg">
+            <h4>Levi capes</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Levi capes')">Add To cart</button>
+        </div>
+
+
+        <div class="col-4">
+            <img src="images/ba1.jpeg">
+            <h4>Back bag </h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Back bag ')">Add To cart</button>
+        </div>
+
+        <div class="col-4">
+            <img src="images/sli3.jpeg">
+            <h4>Classic Slipers</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Classic Slipers')">Add To cart</button>
+        </div>
+     </div>
+
+     
+
+     <div class="row">
+        <div class="col-4">
+            <img src="images/cowby1.jpg">
+            <h4>Chopper Fluff</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$8.50</p>
+             <button onclick="addToCart('Chopper Fluff')">Add To cart</button>
+        </div>
+
+        <div class="col-4">
+            <img src="images/tr3.jpeg">
+            <h4>Long Pants</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Long Pants')">Add To cart</button>
+        </div>
+
+        <div class="col-4">
+            <img src="images/cowby3.jpg">
+            <h4>Cowby3</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Cowby3')">Add To cart</button>
+        </div>
+
+
+        <div class="col-4">
+            <img src="images/cowby4.jpg">
+            <h4>Cowby4</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                
+            </div>
+            <p>$78.00</p>
+            <button onclick="addToCart('Cowby4')">Add To cart</button>
+        </div>
+     </div>
+
+        </div>
+
+
+
+
+
+        <!---------------------------Foooter---------------->
+   <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                  <img src="images/logo1.svg">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                     nobis dolorem et temporibus, ipsam dolor.</p>
+                </div>
+
+                 <div class="footer-col-2">
+                    <h3>Usefull Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Posts</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+
+                    </ul>
+                   
+                  </div>
+                  
+                  <div class="footer-col-3">
+                    <h3>Follow Us on </h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/an1magnet?utm_source=qr&igsh=YWFrYTh4bDlmb2Mz">instagram</a> </li>
+                        <li> X-twitter </li>
+                        <li>Facebook</li>
+                        <li>Whatsapp</li>
+
+                    </ul>
+                  </div>
+
+                  <div class="footer-col-4">
+                    <h3>Payment Mode</h3>
+                    <ul>
+                        <li>Credit Cards </li>
+                        <li> Digital wallet </li>
+                        <li>Cryptocurrency</li>
+                        <li>Paypal</li>
+
+                    </ul>
+                  </div>
+        </div>
+
+                 <hr>
+            <p class="copyright">copyright2025 - Animagnetweb test</p>
+     </div>
+     
+</div>
+
+     
+      
+    
+
+    
+      
+       
+    
+     
+      
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!---------------------------------JavaScript for toggle bar---------------->
+ <script>
+
+        var navLink = document.getElementById("navLink");
+        function showMenu(){
+            navLink.style.right ="0";
+        }
+        function hideMenu(){
+            navLink.style.right ="-200px";
+        }
+
+    </script>
+
+
+<!---------------------------------JavaScript for chatbox---------------->
+
+
+<!-- Add cart functionality -->
+<script>
+    // Simple cart count
+    let cartCount = 0;
+    function addToCart(productName) {
+        cartCount++;
+        document.getElementById('cartCount').textContent = cartCount;
+        // Optionally, show a message
+        // alert(productName + " added to cart!");
+    }
+</script>
+
+   
+   <script src="products.js"></script>
+     <script>
+     // Make product cards clickable to view details
+     document.addEventListener('DOMContentLoaded', function() {
+         // For static cards (col-4), add click event to image/title
+         document.querySelectorAll('.col-4').forEach(function(card) {
+             card.style.cursor = 'pointer';
+             card.onclick = function(e) {
+                 // Get product name from h4
+                 var name = card.querySelector('h4')?.textContent?.trim();
+                 if (name) {
+                     // Pass product name as query param (or use product id if available)
+                     window.location.href = 'products-details.html?product=' + encodeURIComponent(name);
+                 }
+             };
+         });
+     });
+     </script>
+   <script src="script.js"></script>
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // For static cards (col-4), add click event to image/title
+    // Load all products from sessionStorage
+    var allProducts = JSON.parse(sessionStorage.getItem('allProducts'));
+    document.querySelectorAll('.col-4').forEach(function(card) {
+        card.style.cursor = 'pointer';
+        card.onclick = function(e) {
+            var name = card.querySelector('h4')?.textContent?.trim();
+            if (name && allProducts) {
+                var productObj = allProducts.find(p => p.name === name);
+                if (productObj) {
+                    sessionStorage.setItem('selectedProduct', JSON.stringify(productObj));
+                }
+            }
+            window.location.href = 'products-details.html?product=' + encodeURIComponent(name);
+        };
+    });
+});
+</script>
+</html>

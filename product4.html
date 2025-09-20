@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shopping page</title>
+        <meta charset="UFT-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <link rel="stylesheet" href="styles.css"/>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+    </head>
+    <body style="overflow-x:hidden;">
+        <section class="header-2"> 
+           
+            <nav>
+                <a href="index.html"><img src="images/logo1.svg" alt="" ></a>
+
+                <div class="nav-link" id="navLink">
+                     <i class="fa fa-window-close" onclick="hideMenu()"></i>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="product.html">Shop</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">contact</a></li>
+                        
+                  
+                    </ul>
+                </div>
+                <!--------------cartIcon--------------->
+                <div class="cart-icon" id="cartIcon">
+                      <a href="cart.html">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                    <span id="cartCount">0</span></a>
+                </div>
+                
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+                
+            </nav>
+            
+             
+        </section>
+      
+     <div class="small-container">
+        <div class="title">
+            <h2> Your Gojo Saturo collection</h2>
+      
+        </div>
+       
+       <div class="row">
+        <div class="col-4">
+            <img src="image2/pro-1.jpg">
+            <div class="rating">
+                <i class="fa fa-star" data-value="1"></i>
+                <i class="fa fa-star" data-value="2"></i>
+                <i class="fa fa-star" data-value="3"></i>
+                <i class="fa fa-star" data-value="4"></i>
+                <i class="fa fa-star-o" data-value="5"></i>
+            </div>
+            <p>$78.00</p>
+            <button onclick="addToCart('Gojo Saturo T-shirt')">Add To cart</button>
+            
+    
+
+
+        </div>
+
+        <div class="col-4">
+            <img src="image2/pro-2.jpg">
+      
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Gojo Saturo T-shirt (2)')">Add To cart</button>
+        </div>
+
+
+        <div class="col-4">
+            <img src="image2/pro-3.jpg">
+       
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+              <button onclick="addToCart('Gojo Saturo T-shirt (3)')">Add To cart</button>
+        </div>  
+        
+        <div class="col-4">
+            <img src="image2/pro-4.jpg">
+       
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Gojo Saturo T-shirt (4)')">Add To cart</button>
+        </div>
+      
+       </div>
+
+    
+    <div class="row">
+        <div class="col-4">
+            <img src="image2/pro-5.jpg">
+          
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Gojo Saturo T-shirt (5)')">Add To cart</button>
+        </div>
+
+        <div class="col-4">
+            <img src="image2/pro-6.jpg">
+    
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Gojo Saturo T-shirt (6)')">Add To cart</button>
+        </div>
+
+
+        <div class="col-4">
+            <img src="image2/pro-7.jpg">
+          
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Gojo Saturo T-shirt (7)')">Add To cart</button>
+        </div>
+
+        <div class="col-4">
+            <img src="image2/pro-8.jpg">
+           
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>$78.00</p>
+             <button onclick="addToCart('Gojo Saturo T-shirt (8)')">Add To cart</button>
+        </div>
+     </div>
+
+    
+      
+    
+
+    
+      
+       
+        <!-----------------------footer--------------------->
+    
+</div>
+
+     
+      
+    </body>
+    <!---------------------------------JavaScript for toggle bar---------------->
+ <script>
+        var navLink = document.getElementById("navLink");
+        function showMenu(){
+            navLink.style.right ="0";
+        }
+        function hideMenu(){
+            navLink.style.right ="-200px";
+        }
+
+    </script>
+
+
+<!---------------------------------JavaScript for chatbox---------------->
+<script>
+
+             function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+<!-- Add cart functionality -->
+<script>
+    // Simple cart count
+    let cartCount = 0;
+    function addToCart(productName) {
+        cartCount++;
+        document.getElementById('cartCount').textContent = cartCount;
+        // Optionally, show a message
+        // alert(productName + " added to cart!");
+    }
+</script>
+
+   
+   <script src="products.js"></script>
+   <script src="script.js"></script>
+</html>

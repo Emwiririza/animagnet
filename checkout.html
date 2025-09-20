@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Checkout</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header-2">
+        <nav>
+            <a href="index.html"><img src="images/logo1.svg" alt="Logo"></a>
+            <div class="nav-link" id="navLink">
+                <i class="fa fa-window-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="product.html">Shop</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <div class="small-container">
+        <h2>Checkout</h2>
+        <form id="checkout-form" class="checkout-form">
+            <div class="form-group">
+                <label for="name">Full Name</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Shipping Address</label><br>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="payment">Payment Method</label><br>
+                <select id="payment" name="payment" required>
+                    <option value="">Select</option>
+                    <option value="credit">Credit Card</option>
+                    <label for="card-number">Card Number</label>
+                    <option value="paypal">PayPal</option>
+                    <option value="crypto">Cryptocurrency</option>
+                    <input type="text" id="card-number" name="card-number" maxlength="19" placeholder="1234 5678 9012 3456" required>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="coupon">Coupon Code</label><br>
+                <input type="text" id="coupon" name="coupon" placeholder="Enter coupon code (optional)">
+                <button type="button" id="apply-coupon" class="button" style="margin-top:8px;width:auto;padding:6px 16px;font-size:0.95em;">Apply Coupon</button>
+                <span id="coupon-msg" style="margin-left:12px;color:#1a7f37;font-weight:bold;"></span>
+            </div>
+            <button type="submit" class="button">Place Order</button>
+        </form>
+        <div id="order-summary" class="order-summary"></div>
+    </div>
+
+       <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                  <img src="images/logo1.svg">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                     nobis dolorem et temporibus, ipsam dolor.</p>
+                </div>
+
+                 <div class="footer-col-2">
+                    <h3>Usefull Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Posts</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+
+                    </ul>
+                   
+                  </div>
+                  
+                  <div class="footer-col-3">
+                    <h3>Follow Us on </h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/an1magnet?utm_source=qr&igsh=YWFrYTh4bDlmb2Mz">instagram</a> </li>
+                        <li> X-twitter </li>
+                        <li>Facebook</li>
+                        <li>Whatsapp</li>
+
+                    </ul>
+                  </div>
+
+                  <div class="footer-col-4">
+                    <h3>Payment Mode</h3>
+                    <ul>
+                        <li>Credit Cards </li>
+                        <li> Digital wallet </li>
+                        <li>Cryptocurrency</li>
+                        <li>Paypal</li>
+
+                    </ul>
+                  </div>
+        </div>
+
+                 <hr>
+            <p class="copyright">copyright2025 - Animagnetweb test</p>
+     </div>
+     
+</div>
+
+    <script>
+function showToast(message, type = 'info') {
+    var toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '32px';
+    toast.style.right = '32px';
+    toast.style.background = type === 'error' ? '#ffdddd' : (type === 'success' ? '#d4edda' : '#e0e0e0');
+    toast.style.color = type === 'error' ? '#a94442' : (type === 'success' ? '#155724' : '#333');
+    toast.style.padding = '12px 24px';
+    toast.style.borderRadius = '6px';
+    toast.style.zIndex = '9999';
+    toast.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
+    toast.style.fontWeight = 'bold';
+    document.body.appendChild(toast);
+    setTimeout(function() { if (toast) toast.remove(); }, 3000);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('checkout-form');
+    var summary = document.getElementById('order-summary');
+    var couponBtn = document.getElementById('apply-coupon');
+    var couponInput = document.getElementById('coupon');
+    var couponMsg = document.getElementById('coupon-msg');
+    let appliedDiscount = 0;
+    couponBtn.addEventListener('click', function() {
+        var code = couponInput.value.trim().toUpperCase();
+        if (code === 'SAVE10') {
+            appliedDiscount = 10;
+            couponMsg.textContent = 'Coupon applied: $10 off!';
+            showToast('Coupon applied: $10 off!', 'success');
+        } else if (code === 'FREESHIP') {
+            appliedDiscount = 5;
+            couponMsg.textContent = 'Coupon applied: $5 off shipping!';
+            showToast('Coupon applied: $5 off shipping!', 'success');
+        } else if (code) {
+            appliedDiscount = 0;
+            couponMsg.textContent = 'Invalid coupon code.';
+            showToast('Invalid coupon code.', 'error');
+        } else {
+            appliedDiscount = 0;
+            couponMsg.textContent = '';
+        }
+    });
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = form.name.value.trim();
+        var email = form.email.value.trim();
+        var address = form.address.value.trim();
+        var payment = form.payment.value;
+        // Payment validation (simple)
+        if (!name || !email || !address || !payment) {
+            showToast('Please fill in all fields.', 'error');
+            return;
+        }
+        if (!email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
+            showToast('Please enter a valid email address.', 'error');
+            return;
+        }
+        // Generate order ID
+        var orderId = 'ORD-' + Math.floor(Math.random() * 1000000);
+        // Estimate delivery
+        var deliveryDate = new Date();
+        deliveryDate.setDate(deliveryDate.getDate() + 5);
+        var deliveryStr = deliveryDate.toLocaleDateString();
+        summary.innerHTML = `<h3>Order Placed!</h3><p>Order ID: <strong>${orderId}</strong><br>Thank you, ${name}.<br>Your order will be shipped to:<br><strong>${address}</strong><br>Estimated delivery: <strong>${deliveryStr}</strong><br>Confirmation sent to: <strong>${email}</strong></p>`;
+        showToast('Order placed successfully!', 'success');
+        form.reset();
+        sessionStorage.setItem('cart', JSON.stringify([]));
+        appliedDiscount = 0;
+        couponMsg.textContent = '';
+    });
+});
+    </script>
+    <script>
+        var navLink = document.getElementById("navLink");
+        function showMenu(){
+            navLink.style.right ="0";
+        }
+        function hideMenu(){
+            navLink.style.right ="-200px";
+        }
+
+    </script>
+</body>
+</html>

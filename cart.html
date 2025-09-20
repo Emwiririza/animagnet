@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CartPage</title>
+        <meta charset="UFT-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <link rel="stylesheet" href="styles.css"/>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <link rel="stylesheet" href="/styles/cart.css">
+         
+    </head>
+    <body>
+        <section class="header-2"> 
+           
+            <nav>
+                <a href="index.html"><img src="images/logo1.svg" alt="" ></a>
+
+                <div class="nav-link" id="navLink">
+                     <i class="fa fa-window-close" onclick="hideMenu()"></i>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="product.html">Shop</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">contact</a></li>
+                        
+                  
+                    </ul>
+                </div>
+                <!--------------cartIcon--------------->
+                <div class="cart-icon" id="cartIcon">
+                 <a href="cart.html"> <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg></a>
+                    <span id="cartCount">0</span>
+                </div>
+                
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+                
+            </nav>
+            
+     
+        </section>
+
+       <!-------cart item details------>
+      
+        <div class="small-container cart-page">
+
+             <div id="cart-items">
+
+             </div>
+
+             <div id="cart-summary" style="margin-top:24px;text-align:right;font-size:1.1em;"></div>
+             <button id="clear-cart-btn" style="margin-top:16px;float:right;background:#e74c3c;color:#fff;padding:8px 16px;border:none;border-radius:4px;cursor:pointer;">Clear Cart</button>
+            
+             <div class="checkout-btn-container">
+                <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+              </div>
+
+          </div>
+           
+      
+       
+        <!-----------------------footer--------------------->
+           
+      <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                  <img src="images/logo1.svg">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                     nobis dolorem et temporibus, ipsam dolor.</p>
+                </div>
+
+                 <div class="footer-col-2">
+                    <h3>Usefull Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Posts</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+
+                    </ul>
+                   
+                  </div>
+                  
+                  <div class="footer-col-3">
+                    <h3>Follow Us on </h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/an1magnet?utm_source=qr&igsh=YWFrYTh4bDlmb2Mz">instagram</a> </li>
+                        <li> X-twitter </li>
+                        <li>Facebook</li>
+                        <li>Whatsapp</li>
+
+                    </ul>
+                  </div>
+
+                  <div class="footer-col-4">
+                    <h3>Payment Mode</h3>
+                    <ul>
+                        <li>Credit Cards </li>
+                        <li> Digital wallet </li>
+                        <li>Cryptocurrency</li>
+                        <li>Paypal</li>
+
+                    </ul>
+                  </div>
+        </div>
+
+                 <hr>
+            <p class="copyright">copyright2025 - Animagnetweb test</p>
+     </div>
+     
+</div>
+    </body>
+    <!---------------------------------JavaScript for toggle bar---------------->
+ <script>
+        var navLink = document.getElementById("navLink");
+        function showMenu(){
+            navLink.style.right ="0";
+        }
+        function hideMenu(){
+            navLink.style.right ="-200px";
+        }
+
+    </script>
+
+
+
+
+   <script src="cart.js"></script>
+
+   <script src="products.js"></script>
+   
+     </script>
+   <script src="script.js"></script>
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkoutBtn = document.getElementById('checkout-btn');
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener('click', function() {
+                var cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+                if (cart.length === 0) {
+                    alert('Your cart is empty. Please add items before proceeding to checkout.');
+                    return;
+                }
+                // Redirect to checkout page (replace with your actual checkout page)
+                window.location.href = 'checkout.html';
+            });
+        }
+    });
+</script>
+</html>

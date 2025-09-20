@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>E-commerce web</title>
+        <meta charset="UFT-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <link rel="stylesheet" href="styles.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+    </head>
+    <body>
+        <section class="header-2"> 
+           
+            <nav>
+                <a href="index.html"><img src="images/logo1.svg" ></a>
+
+                <div class="nav-link" id="navLink">
+                     <i class="fa fa-window-close" onclick="hideMenu()"></i>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="product.html">Shop</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                    </ul>
+                     
+                </div>
+                <!--------------cartIcon--------------->
+                <div class="cart-icon" id="cartIcon">
+                 <a href="cart.html">
+                   <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                </svg>
+                    <span id="cartCount">0</span> </a>
+                </div>
+                
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+                
+            </nav>
+            
+           
+
+            <!-- ------------------Slideshow container-------------------->
+             
+        </section>
+        <section class="col-3">
+            
+            <div class="row">
+                <div class="form-box active" id="login-form">
+                    <h2>Login</h2>
+                    <form action="">
+                        <input type="email" name="email" placeholder="Email" required>
+                            <input type="password" name="password"  placeholder="Password" required>
+                        <button type="submit"name="login">Login</button>
+                        <P>Don't have an account?<a href="#" onclick="showForm('register-form')">Register</a></P>
+                    </form>
+                </div>
+
+                  <div class="form-box" id="register-form">
+                    <h2>Register</h2>
+                    <form action="">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                            <input type="password" name="password"  placeholder="Password" required>
+                        <select name="role" required>
+                            <option value="">==Select Role==</option>
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <button type="submit"name="register">Register</button>
+                        <P>Already have an account?<a href="#" onclick="showForm('login-form')">Login</a></P>
+                    </form>
+                        <div id="formFeedback" style="display:none; color:green; margin-top:10px;"></div>
+                </div>
+
+            </div>
+             
+              
+            
+       
+        </section>
+
+    <!------------------news letter------------>
+ 
+
+    
+      
+       
+        <!-----------------------footer--------------------->
+     <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                  <img src="images/logo1.svg">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing <br>
+                     nobis dolorem et temporibus, ipsam dolor.</p>
+                </div>
+
+                 <div class="footer-col-2">
+                    <h3>Usefull Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Posts</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+
+                    </ul>
+                   
+                  </div>
+                  
+                  <div class="footer-col-3">
+                    <h3>Follow Us on </h3>
+                    <ul>
+                        <li><a href="https://www.instagram.com/an1magnet?utm_source=qr&igsh=YWFrYTh4bDlmb2Mz">instagram</a> </li>
+                        <li> X-twitter </li>
+                        <li>Facebook</li>
+                        <li>Whatsapp</li>
+
+                    </ul>
+                  </div>
+
+                  <div class="footer-col-4">
+                    <h3>Payment Mode</h3>
+                    <ul>
+                        <li>Credit Cards </li>
+                        <li> Digital wallet </li>
+                        <li>Cryptocurrency</li>
+                        <li>Paypal</li>
+
+                    </ul>
+                  </div>
+        </div>
+
+                 <hr>
+            <p class="copyright">copyright2025 - Animagnetweb test</p>
+     </div>
+     
+</div>
+
+     
+    </body>
+
+
+    <!---------------------------------JavaScript for toggle bar---------------->
+
+
+ <script>
+        var navLink = document.getElementById("navLink");
+        function showMenu(){
+            navLink.style.right ="0";
+        }
+        function hideMenu(){
+            navLink.style.right ="-200px";
+        }
+
+        // Form toggle logic
+        function showForm(formId) {
+            document.getElementById('login-form').classList.remove('active');
+            document.getElementById('register-form').classList.remove('active');
+            document.getElementById(formId).classList.add('active');
+            document.getElementById('formFeedback').style.display = 'none';
+        }
+
+        // Login/Register feedback
+        document.getElementById('login-form').querySelector('form').onsubmit = function(e) {
+            e.preventDefault();
+            document.getElementById('formFeedback').textContent = 'Login successful!';
+            document.getElementById('formFeedback').style.display = 'block';
+        };
+        document.getElementById('register-form').querySelector('form').onsubmit = function(e) {
+            e.preventDefault();
+            document.getElementById('formFeedback').textContent = 'Registration successful!';
+            document.getElementById('formFeedback').style.display = 'block';
+        };
+
+    </script>
+
+<!---------------------------------JavaScript for chatbox---------------->
+<script>
+// ...existing code...
+</script>
+
+
+<script>
+// ...existing code...
+
+</script>
+
+<!-- Add cart functionality -->
+<script>
+// ...existing code...
+</script>
+
+   <script src="cart.js"></script>
+   <script src="products.js"></script>
+   <script src="script.js"></script>
+<script>
+// Newsletter feedback
+document.getElementById('newsletterForm').onsubmit = function(e) {
+    e.preventDefault();
+    var email = document.getElementById('newsletterEmail').value;
+    var errorDiv = document.getElementById('newsletterError');
+    var successDiv = document.getElementById('newsletterSuccess');
+    errorDiv.style.display = 'none';
+    successDiv.style.display = 'none';
+    if (!email || !email.includes('@')) {
+        errorDiv.textContent = 'Please enter a valid email address.';
+        errorDiv.style.display = 'block';
+        return;
+    }
+    successDiv.textContent = 'Thank you for subscribing!';
+    successDiv.style.display = 'block';
+    document.getElementById('newsletterEmail').value = '';
+};
+</script>
+</html>
